@@ -1,11 +1,46 @@
 # Employee Feedback Portal - Frontend
 
-This is the frontend application for the Employee Feedback Portal, built with React and Material-UI.
+A modern web application for managing employee feedback, built with React, Redux Toolkit, and Tailwind CSS.
 
-## Prerequisites
+## Features
 
-- Node.js (v14 or higher)
-- npm or yarn
+### Authentication
+- Secure login system for admin access
+- JWT-based authentication
+- Protected routes
+
+### Feedback Management
+- Submit anonymous feedback with categories:
+  - Work Environment
+  - Leadership
+  - Growth
+  - Others
+- Form validation using Zod
+- Real-time feedback submission status
+- Browser information tracking
+
+### Admin Dashboard
+- View all submitted feedback
+- Filter feedback by category
+- Sort feedback by date or category
+- Mark feedback as reviewed
+- Delete feedback entries
+- Pagination support
+- Status indicators for reviewed/pending feedback
+
+## Tech Stack
+
+### Core Technologies
+- React 18
+- Redux Toolkit for state management
+- React Router for navigation
+- Tailwind CSS for styling
+- Vite as build tool
+
+### Key Dependencies
+- Axios for API communication
+- React Toastify for notifications
+- Zod for form validation
 
 ## Setup Instructions
 
@@ -20,90 +55,56 @@ cd frontend
 npm install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
-```
-REACT_APP_API_URL=http://localhost:5000/api
-```
-
-4. Start the development server:
+3. Start the development server:
 ```bash
-npm start
+npm run dev
 ```
 
 The application will run on `http://localhost:3000`
 
-## Features
+## Available Scripts
 
-### Employee Features
-- Login system
-- Submit anonymous feedback
-- View feedback history
-- Update profile information
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
 
-### Admin Features
-- Secure admin login
-- Dashboard with statistics
-- Employee management
-- Feedback management
-- Status updates for feedback
+## Features Status
 
-## Project Structure
-
-```
-src/
-├── components/         # Reusable components
-├── pages/             # Page components
-├── context/           # React context
-├── services/          # API services
-├── utils/             # Utility functions
-└── App.js            # Main application component
-```
-
-## Assumptions Made
-
-1. Modern browser support (Chrome, Firefox, Safari, Edge)
-2. Responsive design for desktop and tablet
-3. JWT token stored in localStorage
-4. Backend API running on localhost:5000
-5. Material-UI as the component library
-6. React Router for navigation
-
-## Completion Status
-
-### Completed Features
-- ✅ Employee authentication
+### Completed
 - ✅ Admin authentication
-- ✅ Feedback submission form
-- ✅ Admin dashboard
-- ✅ Employee management
-- ✅ Feedback management
+- ✅ Feedback submission with validation
+- ✅ Admin dashboard with CRUD operations
+- ✅ Real-time notifications
 - ✅ Responsive design
-- ✅ JWT token handling
-- ✅ Basic error handling
+- ✅ Form validation
+- ✅ Pagination
+- ✅ Filtering and sorting
 
-### Pending Features
-- ⏳ Advanced filtering and search
-- ⏳ Data visualization improvements
+### Pending
+- ⏳ User registration
+- ⏳ Password reset functionality
+- ⏳ Email notifications
+- ⏳ Advanced analytics
 - ⏳ Export functionality
 - ⏳ Unit tests
 - ⏳ E2E tests
-- ⏳ Performance optimizations
 
-## Available Scripts
+## Security Features
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
-- `npm run build` - Builds the app for production
-- `npm run eject` - Ejects from Create React App
+1. JWT-based authentication
+2. Protected routes
+3. Form validation
+4. Secure API communication
+5. XSS protection through React
 
-## Dependencies
+## Error Handling
 
-- React
-- Material-UI
-- Axios
-- React Router
-- React Context API
-- Chart.js (for statistics)
+The application handles various error scenarios:
+- Network errors
+- Authentication failures
+- Form validation errors
+- API response errors
+- Session expiration
 
 ## Browser Support
 
@@ -119,20 +120,3 @@ src/
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-
-## Security Considerations
-
-1. JWT tokens are stored in localStorage
-2. API calls include authentication headers
-3. Protected routes for admin access
-4. Input validation on forms
-5. XSS protection through React
-
-## Error Handling
-
-The application handles various error scenarios:
-- Network errors
-- Authentication failures
-- Form validation errors
-- API response errors
-- Session expiration
